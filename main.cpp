@@ -1,30 +1,32 @@
 #include <iostream>
-
 using namespace std;
 
 int main()
 {
-
-    int a,b,x0;
-    cout << "Podaj a -> ";
+    double a,b,c,x0;
+    cout << "Podaj A -> ";
     cin >> a;
-    cout << "Podaj b -> " ;
+    cout << "Podaj B -> " ;
     cin >> b;
-    if(a==0 && b==0){
-        cout << "funkcja ma nieskonczenie wiele miejsc zerowych"<<endl;
+    cout << "Podaj C -> " ;
+    cin >> c;
+
+    if(a==0 && b==0 ){
+        cout << " Funkcja nie istnieje";
+    }
+    else if(b==0){
+        cout << "Miejsce zerowe funkcji "<<a<<"x"<<b<<"y"<<"+"<<c<<"  wynosi -> " <<-c/a;
         }
-    else if(a==0 && b!=0 ){
-        cout << " Funkcja nie ma miejsc zerowych"<<endl;
+
+    else if(a==0){
+        cout << "Miejsce zerowe funkcji "<<a<<"x"<<"+("<<b<<")"<<"y"<<"+"<<c<<"  wynosi -> "<<-c/b;
     }
     else{
-        x0=-b/a;
-        if(b>=0)
-        cout << "Miejsce zerowe funkcji "<<a<<"x"<<"+"<<b<<"  wynosi -> "<<x0<<endl;
+        x0=(c/-a);
+        if(-c>=0)
+            cout << "Miejsce zerowe funkcji "<<a<<"x"<<"+("<<b<<")"<<"y"<<"+"<<c<<"  wynosi -> "<<x0;
         else
-        cout << "Miejsce zerowe funkcji "<<a<<"x"<<"+("<<b<<")  wynosi -> "<<x0<<endl;
-
+            cout << "Miejsce zerowe funkcji "<<a<<"x"<<"+"<<b<<"y"<<"+"<<c<<"  wynosi -> "<<x0;
     }
     return 0;
 }
-
-
