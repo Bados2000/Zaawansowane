@@ -1,32 +1,36 @@
 #include <iostream>
+#include <math.h>
 using namespace std;
-
 int main()
 {
-    double a,b,c,x0;
-    cout << "Podaj A -> ";
+    double a,b,c,delta,x1,x2,x;
+    cout << "Podaj a ( Musi byc rozne od 0 ) -> ";
     cin >> a;
-    cout << "Podaj B -> " ;
+    if(a==0){
+            cout<<"funkcja nie jest kwadratowa";
+            return 0;
+    }
+    cout << "Podaj b  ->  " ;
     cin >> b;
-    cout << "Podaj C -> " ;
+    cout << "Podaj c -> " ;
     cin >> c;
+    delta=(b*b)-(4*a*c);
 
-    if(a==0 && b==0 ){
-        cout << " Funkcja nie istnieje";
+    if(delta>0)
+    {
+        x1=(-b-sqrt(delta))/(2*a);
+        x2=(-b+sqrt(delta))/(2*a);
+        cout<<"Wynik to :\nx1 = "<<x1<<"\nx2 = "<<x2;
     }
-    else if(b==0){
-        cout << "Miejsce zerowe funkcji "<<a<<"x"<<b<<"y"<<"+"<<c<<"  wynosi -> " <<-c/a;
-        }
-
-    else if(a==0){
-        cout << "Miejsce zerowe funkcji "<<a<<"x"<<"+("<<b<<")"<<"y"<<"+"<<c<<"  wynosi -> "<<-c/b;
+    if(delta==0)
+    {
+        x=-b/(2*a);
+        cout<<"Wynik to : \n x = "<<x;
     }
-    else{
-        x0=(c/-a);
-        if(-c>=0)
-            cout << "Miejsce zerowe funkcji "<<a<<"x"<<"+("<<b<<")"<<"y"<<"+"<<c<<"  wynosi -> "<<x0;
-        else
-            cout << "Miejsce zerowe funkcji "<<a<<"x"<<"+"<<b<<"y"<<"+"<<c<<"  wynosi -> "<<x0;
+    if(delta<0)
+    {
+    cout<<"Brak rozwiazan";
     }
     return 0;
 }
+
