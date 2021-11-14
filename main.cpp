@@ -130,6 +130,45 @@ double a,b,c,p,q,delta,x1,x2,x;
     }
     }
 }
+
+void zamianaOI(){
+    double a,b,c,x1,x2,delta;
+    cout << "Podaj funkcje kwadratowa w postaci ogolnej f(x)=ax^2+bx+c"<<endl;
+    cout << "Podaj a ->";
+    cin >> a;
+    cout << "Podaj b ->";
+    cin >> b;
+    cout << "Podaj c ->";
+    cin >> c;
+    delta=(b*b)-(4*a*c);
+    if ( delta > 0){
+    x1=(-b-sqrt(delta))/(2*a);
+    x2=(-b+sqrt(delta))/(2*a);
+    cout << "Funkcja po przeksztalceniu na postaæ iloczynowa --> f(x)=a(x-"<<x1<<")( x-"<<x2<<")";
+    }
+    else if(delta == 0) {
+        x1=-b/2*a;
+        cout << "Funkcja po przeksztalceniu na postaæ iloczynowa --> f(x)=a(x-"<<x1<<")^2";
+    }
+    else
+        cout <<"Delta jest mniejsza od zera, brak mozliwosci zamiany na postac iloczynowa";
+}
+
+void zamianaIO(){
+    double a,b,c,x1,x2,delta;
+    cout << "Podaj funkcje kwadratowa w postaci iloczynowej f(x)=a(x-x1)(x-x2)"<<endl;
+    cout << "Podaj a ->";
+    cin >> a;
+    cout << "Podaj x1 ->";
+    cin >> x1;
+    cout << "Podaj x2 ->";
+    cin >> x2;
+    b=-a*(x1+x2);
+    c=a*x1*x2;
+
+    cout << "Funkcja po przeksztalceniu na postac ogolona --> f(x)="<<a<<"x^2+"<<b<<"x+"<<c;
+    }
+
 int main()
 {
 
@@ -138,7 +177,9 @@ int main()
     cout << "1 --- Obliczanie miejsc zerowych funkcji liniowej"<<endl;
     cout << "2 --- Obliczanie miejsc zerowych funkcji kwadratowej(Postac ogolna)"<<endl;
     cout << "3 --- Obliczanie miejsc zerowych funkcji kwadratowej(Postac kanoniczna)"<<endl;
+    cout << "4 --- Zamiania postaci funkcji kwadratowej z ogólnej na iloczynow¹"<<endl;
     cout << "Podaj nr operacji ktora chcesz wykonac --> ";
+
     do
     {
 
@@ -154,7 +195,12 @@ int main()
         case 3:
             kwkan();
             break;
-
+        case 4:
+            zamianaOI();
+            break;
+        case 5:
+            zamianaIO();
+            break;
         }
     } while( liczba != 0 );
 
