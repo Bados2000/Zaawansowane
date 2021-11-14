@@ -168,6 +168,39 @@ void zamianaIO(){
 
     cout << "Funkcja po przeksztalceniu na postac ogolona --> f(x)="<<a<<"x^2+"<<b<<"x+"<<c;
     }
+void zamianaOgolnaNaKanon ()
+{
+    double a,b,c,p,q,delta;
+    cout << "Podaj funkcje kwadratowa w postaci ogolnej f(x)=ax^2+bx+c"<<endl;
+    cout << "Podaj a: "<< endl; cin>>a;
+    cout << "Podaj b: "<<endl; cin>>b;
+    cout<< "Podaj c: "<<endl; cin>>c;
+    delta=(b*b)-4*a*c;
+    p=(-b)/2*a;
+    q=(-delta)/4*a;
+    cout << "Funkcja po przeksztalceniu na postac kanoniczna --> f(x)="<<a<<"(x"<<p<<")^2+"<<q;
+
+
+}
+void zamianaKanonNaOgolna ()
+{
+    double a,p,q;
+    cout << "Podaj funkcje kwadratowa w postaci kanonicznej f(x)=a(x-p)^2+q"<<endl;
+    cout << "Podaj a: "<< endl; cin>>a;
+    cout << "Podaj p: "<<endl; cin>>p;
+    cout<< "Podaj q: "<<endl; cin>>q;
+    if(p<0)
+    {
+        cout << "Funkcja po przeksztalceniu na postac ogolna --> f(x)="<<a<<"x^2+"<<p*2*a<<"x+"<<q+(p*p*a);
+    }
+    else if(p>0)
+    {
+         cout << "Funkcja po przeksztalceniu na postac ogolna --> f(x)="<<a<<"x^2+"<<p*2*a<<"x+"<<q+(p*p*a);
+    }
+
+
+
+}
 
 int main()
 {
@@ -177,7 +210,10 @@ int main()
     cout << "1 --- Obliczanie miejsc zerowych funkcji liniowej"<<endl;
     cout << "2 --- Obliczanie miejsc zerowych funkcji kwadratowej(Postac ogolna)"<<endl;
     cout << "3 --- Obliczanie miejsc zerowych funkcji kwadratowej(Postac kanoniczna)"<<endl;
-    cout << "4 --- Zamiania postaci funkcji kwadratowej z ogólnej na iloczynow¹"<<endl;
+    cout << "4 --- Zamiana postaci funkcji kwadratowej z ogolnej na iloczynowa"<<endl;
+    cout << "5 --- Zamiana postaci funkcji kwadratowej z iloczynowej na ogolna" << endl;
+    cout << "6 --- Zamiana postaci funkcji kwadratowej z ogolnej na kanoniczna" << endl;
+    cout << "7 --- Zamiana postaci funkcji kwadratowej z kanonicznej na ogolna" << endl;
     cout << "Podaj nr operacji ktora chcesz wykonac --> ";
 
     do
@@ -200,6 +236,12 @@ int main()
             break;
         case 5:
             zamianaIO();
+            break;
+        case 6:
+            zamianaOgolnaNaKanon();
+            break;
+        case 7:
+            zamianaKanonNaOgolna();
             break;
         }
     } while( liczba != 0 );
