@@ -1,0 +1,56 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int rozmiar = 5;
+    std::cout << "Podawaj liczby, 0 konczy wczytywanie.\n";
+
+int j=0;
+int * tablica = new int[rozmiar];
+int * koko = new int[ rozmiar ];
+
+for(int i=0;i<rozmiar;i++) tablica[i]=0,koko[i]=0;
+
+    while( true )
+    {
+        int liczba;
+        std::cin >> liczba;
+
+        if( liczba == 0 )
+             break;
+
+        if(j==rozmiar){
+
+
+
+        int * koko = new int[ rozmiar+=5 ];
+        // Brakuje miejsca, utwórz większą tablicę
+
+
+        // Skopiuj dane
+        for(int i = 0; i<j;i++)
+        {
+
+            koko[i] = tablica[i];
+           // cout<< koko[i]<<endl;
+        }
+
+        delete[] koko;
+        tablica= koko;
+        // Zakutalizuj zmienne
+
+        }
+        tablica[ j ] = liczba;
+        j++;
+        // Dodaj nową wartość
+
+    }
+
+    std::cout << "Te same liczby, ale odwrotnie!\n";
+
+    for(int p=j-1;p>=0;p--)
+        cout<<tablica[p]<<" ";
+
+    //delete[] tablica;
+}
