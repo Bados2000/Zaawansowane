@@ -1,0 +1,79 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
+class RGB3D{
+    public:
+    PunktRGB3D( int x, int y,int z,int r, int g,int b);
+
+};
+
+RGB3D::PunktRGB3D( int x, int y,int z,int r, int g,int b )
+{
+        if(z!=0)
+        cout<<"Wloczono lapmke ["<<x<<","<<y<<","<<z<<","<<"]"<<" o kolorze<"<<r<<","<<g<<","<<b<<">";
+        else{
+        if(b==0)
+        cout<<"Wyloczono lapmke ["<<x<<y<<"]";
+        else
+        cout<<"Wloczono lapmke ["<<x<<y<<"]";
+        }
+    }
+
+class To2D{
+public:
+int AdapterDo2D(int x,int y,int b);
+};
+
+int To2D::AdapterDo2D(int x, int y,int b)
+{
+
+    RGB3D zmienna;
+    zmienna.PunktRGB3D( x,y,0,0,0,b );
+}
+int main()
+{
+int opcja,x,y,z,r,g,b;
+cout<<"Menu opcji"<<endl;
+cout<<"1-Zaswiecenie lampek w kostce"<<endl;
+cout<<"2-Podswietlenie napisu"<<endl;
+cin>>opcja;
+
+    if(opcja==1){
+        cout << "Podaj lampke ktora chcesz zaswiecic(x,y,z)"<<endl;
+        cout <<"Podaj x ->";
+        cin >> x;
+        cout <<"Podaj y ->";
+        cin >> y;
+        cout <<"Podaj z ->";
+        cin >> z;
+        cout <<"Podaj kolor w formacie RGB"<<endl;
+        cout <<"Podaj R ->";
+        cin >> r;
+        cout <<"Podaj G ->";
+        cin >> g;
+        cout <<"Podaj B ->";
+        cin >> b;
+        RGB3D zmienna;
+        zmienna.PunktRGB3D( x,y,z,r,g,b);
+
+        }
+    else if(opcja==2){
+        cout << "Podaj punkt ktory chcesz zaswiecic(x,y)"<<endl;
+        cout <<"Podaj x ->";
+        cin >> x;
+        cout <<"Podaj y ->";
+        cin >> y;
+        cout <<"Wpisz 255 by zaswiecic lub 0 by zgasic lampke"<<endl;
+        cin >> b;
+        To2D zmienna2d;
+        zmienna2d.AdapterDo2D( x,y,b );
+    }
+
+
+
+
+    return 0;
+}
