@@ -1,0 +1,34 @@
+#include <iostream>
+#include <string>
+#include <math.h>
+using namespace std;
+
+
+class Adapter{
+    public:
+    Przelicz( int re, int im);
+
+};
+
+Adapter::Przelicz( int re, int im)
+    {
+        int modulz,tgalfa;
+        modulz = sqrt((re*re)+(im*im));
+        tgalfa = im/re;
+        cout<<"Modulz = "<<modulz<<endl;
+        cout<<"tgalfa = "<<tgalfa<<endl;
+    }
+
+
+
+int main()
+{
+
+    Adapter adapt1;
+    adapt1.Przelicz(2,3);
+
+
+
+
+    return 0;
+}
